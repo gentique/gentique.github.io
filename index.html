@@ -4,10 +4,431 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gentian Barileva&apos;s Front Page</title>
+    <meta name="description" content="Gentian Barileva - Senior iOS Engineer with expertise in Swift, SwiftUI, and mobile development">
+    <meta name="keywords" content="iOS Developer, Swift, SwiftUI, Mobile Development, Software Engineer, Gentian Barileva">
+    <meta property="og:title" content="Gentian Barileva - Senior iOS Engineer">
+    <meta property="og:description" content="Professional portfolio of Gentian Barileva, a Senior iOS Engineer with expertise in Swift, SwiftUI, and mobile app development">
+    <meta property="og:image" content="img/Photo-149-slack.jpg">
+    <meta property="og:url" content="https://gentique.dev">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <title>Gentian Barileva - Senior iOS Engineer</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+    <link rel="manifest" href="ico/manifest.json">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="Helper/pure-min-0.5.0.css">
+    <link rel="stylesheet" href="Helper/grids-responsive-min-0.5.0.css">
+    <link rel="stylesheet" href="Helper/styles.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR-ANALYTICS-ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YOUR-ANALYTICS-ID');
+    </script>
 </head>
 <body>
-    <h1>Hello world</h1>
-    <img src="https://imgs.xkcd.com/comics/sandwich.png" alt="meme">
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">GB</a>
+            <nav>
+                <button class="menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#open-source">Open Source</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Gentian Barileva</h1>
+                    <p>Senior iOS Engineer with expertise in building scalable, elegant, and user-friendly mobile applications that deliver exceptional experiences.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="button">Get in Touch</a>
+                        <a href="downloads/Gentian_Barileva.pdf" class="button button-secondary">Download Resume</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="img/Photo-149-slack.jpg" alt="Gentian Barileva" />
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card animate-on-scroll">
+                    <img src="img/progress-bar-app.jpg" alt="Progress Bar App" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Progress Bar - Track Your Time</h3>
+                        <p class="project-description">A time tracker and organizer app for iOS that helps users visualize and manage their time effectively with intuitive progress bars.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Swift</span>
+                            <span class="tech-tag">iOS</span>
+                            <span class="tech-tag">CoreData</span>
+                            <span class="tech-tag">CloudKit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://itunes.apple.com/us/app/progress-bar-track-your-time/id1451762114" target="_blank"><i class="fab fa-app-store-ios"></i> View on App Store</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card animate-on-scroll">
+                    <img src="img/audio-player-app.jpg" alt="Audio Player App" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Audio Player with Download Functionality</h3>
+                        <p class="project-description">A fully-fledged iOS audio player with built-in downloading capabilities for offline listening, custom playback controls, and playlist management.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Swift</span>
+                            <span class="tech-tag">AVFoundation</span>
+                            <span class="tech-tag">URLSession</span>
+                            <span class="tech-tag">MediaPlayer</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/gentique/jutubeDL" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card animate-on-scroll">
+                    <img src="img/airalo-app.jpg" alt="Airalo Project" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Airalo iOS App</h3>
+                        <p class="project-description">Contributed to the Airalo iOS app, focusing on optimizing testability, improving CI/CD workflows, and enhancing the overall software development lifecycle.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Swift</span>
+                            <span class="tech-tag">SwiftUI</span>
+                            <span class="tech-tag">GitHub Actions</span>
+                            <span class="tech-tag">Snapshot Testing</span>
+                            <span class="tech-tag">Maestro</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://apps.apple.com/app/airalo/id1475911720" target="_blank"><i class="fab fa-app-store-ios"></i> View on App Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                <!-- Airalo -->
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2023 - Present</div>
+                        <h3 class="timeline-title">Senior iOS Engineer</h3>
+                        <h4 class="timeline-subtitle">Airalo (Remote)</h4>
+                        <ul>
+                            <li>Led technical breakdowns of key initiatives and improvements</li>
+                            <li>Automated the release process by relieving engineers of tedious tasks</li>
+                            <li>Migrated CI workflows from Bitrise to GitHub Actions</li>
+                            <li>Introduced Snapshot Testing and guidelines for maintaining quality</li>
+                            <li>Designed more testable architecture layers for streamlined testing</li>
+                            <li>Set up end-to-end testing pipelines using Maestro</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Povio -->
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">November 2021 - May 2023</div>
+                        <h3 class="timeline-title">iOS Engineer</h3>
+                        <h4 class="timeline-subtitle">Povio (Pristina, Kosovo)</h4>
+                        <ul>
+                            <li>Led internal project for kickstarting new projects with company best practices</li>
+                            <li>Refactored and optimized CI/CD templates for iOS projects</li>
+                            <li>Developed apps using ultra-wideband tech with Apple's NearbyInteraction framework</li>
+                            <li>Built HIPAA-compliant health-related projects</li>
+                            <li>Implemented TDD and MVP architecture with composable approach</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- dua.com -->
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">July 2020 - November 2021</div>
+                        <h3 class="timeline-title">iOS Developer</h3>
+                        <h4 class="timeline-subtitle">dua.com (Pristina, Kosovo)</h4>
+                        <ul>
+                            <li>Integrated In-App Purchases (Consumables & Auto-Renewable Subscriptions)</li>
+                            <li>Developed white-label solution with shared code and multiple targets</li>
+                            <li>Built Tinder-like Instagram integration using Basic Display and Graph API</li>
+                            <li>Implemented CallKit & VoIP support via Twilio for P2P calls</li>
+                            <li>Set up build automation using Fastlane and CI/CD using Bitrise</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Trigonom -->
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">February 2017 - July 2020</div>
+                        <h3 class="timeline-title">Game Developer</h3>
+                        <h4 class="timeline-subtitle">Trigonom sh.p.k. (Pristina, Kosovo)</h4>
+                        <ul>
+                            <li>Designed and built games for iOS and Android using cross-platform game engines</li>
+                            <li>Maintained existing games and shipped new features</li>
+                            <li>Optimized games for performance and ensured quality</li>
+                            <li>Played a key role in design decisions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <!-- iOS Development -->
+                <div class="skills-category animate-on-scroll">
+                    <h3><i class="fab fa-apple"></i> iOS Development</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">Swift</div>
+                        <div class="skill-item">SwiftUI</div>
+                        <div class="skill-item">UIKit</div>
+                        <div class="skill-item">Objective-C</div>
+                        <div class="skill-item">AVFoundation</div>
+                        <div class="skill-item">CoreData</div>
+                        <div class="skill-item">CoreLocation</div>
+                        <div class="skill-item">MapKit</div>
+                        <div class="skill-item">StoreKit</div>
+                        <div class="skill-item">CallKit</div>
+                        <div class="skill-item">CloudKit</div>
+                        <div class="skill-item">Combine</div>
+                        <div class="skill-item">Core Bluetooth</div>
+                        <div class="skill-item">NearbyInteraction</div>
+                    </div>
+                </div>
+                
+                <!-- Tools & Practices -->
+                <div class="skills-category animate-on-scroll">
+                    <h3><i class="fas fa-tools"></i> Tools & Practices</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">Xcode</div>
+                        <div class="skill-item">Git</div>
+                        <div class="skill-item">GitHub Actions</div>
+                        <div class="skill-item">Bitrise</div>
+                        <div class="skill-item">Fastlane</div>
+                        <div class="skill-item">TDD</div>
+                        <div class="skill-item">Snapshot Testing</div>
+                        <div class="skill-item">Maestro</div>
+                        <div class="skill-item">Crashlytics</div>
+                        <div class="skill-item">Firebase</div>
+                        <div class="skill-item">CI/CD</div>
+                        <div class="skill-item">Figma</div>
+                        <div class="skill-item">REST APIs</div>
+                    </div>
+                </div>
+                
+                <!-- Architecture & Patterns -->
+                <div class="skills-category animate-on-scroll">
+                    <h3><i class="fas fa-sitemap"></i> Architecture & Patterns</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">MVC</div>
+                        <div class="skill-item">MVVM</div>
+                        <div class="skill-item">MVP</div>
+                        <div class="skill-item">Clean Architecture</div>
+                        <div class="skill-item">Dependency Injection</div>
+                        <div class="skill-item">Protocol-Oriented Programming</div>
+                        <div class="skill-item">Composable Architecture</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Open Source Section -->
+    <section id="open-source" class="section">
+        <div class="container">
+            <h2 class="section-title">Open Source Contributions</h2>
+            <div class="repo-grid">
+                <!-- Repo 1 -->
+                <div class="repo-card animate-on-scroll">
+                    <div class="repo-title">
+                        <i class="fab fa-github"></i>
+                        <h3>jutubeDL</h3>
+                    </div>
+                    <p class="repo-description">A fully-fledged audio player for iOS with built-in download functionality, allowing users to download and play audio files offline.</p>
+                    <div class="repo-meta">
+                        <div class="repo-language">
+                            <span class="language-dot lang-swift"></span>
+                            <span>Swift</span>
+                        </div>
+                        <a href="https://github.com/gentique/jutubeDL" target="_blank" class="read-more">View Repository</a>
+                    </div>
+                </div>
+                
+                <!-- Placeholder for other repositories -->
+                <div class="repo-card animate-on-scroll">
+                    <div class="repo-title">
+                        <i class="fab fa-github"></i>
+                        <h3>Swift Package Example</h3>
+                    </div>
+                    <p class="repo-description">A collection of reusable Swift components and extensions for iOS development.</p>
+                    <div class="repo-meta">
+                        <div class="repo-language">
+                            <span class="language-dot lang-swift"></span>
+                            <span>Swift</span>
+                        </div>
+                        <a href="https://github.com/gentique/" target="_blank" class="read-more">View Repository</a>
+                    </div>
+                </div>
+                
+                <div class="repo-card animate-on-scroll">
+                    <div class="repo-title">
+                        <i class="fab fa-github"></i>
+                        <h3>iOS Development Resources</h3>
+                    </div>
+                    <p class="repo-description">A curated list of resources for iOS development including articles, tools, libraries, and best practices.</p>
+                    <div class="repo-meta">
+                        <div class="repo-language">
+                            <span class="language-dot lang-swift"></span>
+                            <span>Swift</span>
+                        </div>
+                        <a href="https://github.com/gentique/" target="_blank" class="read-more">View Repository</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <div class="container">
+            <h2 class="section-title">Latest Articles</h2>
+            <div class="blog-grid">
+                <!-- Blog Post 1 (Placeholder) -->
+                <div class="blog-card animate-on-scroll">
+                    <img src="img/blog-post-1.jpg" alt="Testing iOS Apps" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-date">April 10, 2025</div>
+                        <h3 class="blog-title">Effective iOS Testing Strategies</h3>
+                        <p class="blog-excerpt">Learn how to implement effective testing strategies for iOS applications using Snapshot Testing and proper test organization.</p>
+                        <a href="blog/ios-testing-strategies" class="read-more">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 (Placeholder) -->
+                <div class="blog-card animate-on-scroll">
+                    <img src="img/blog-post-2.jpg" alt="SwiftUI Tips" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-date">March 25, 2025</div>
+                        <h3 class="blog-title">Advanced SwiftUI Techniques</h3>
+                        <p class="blog-excerpt">Explore advanced SwiftUI techniques for creating custom animations, transitions, and complex UI components.</p>
+                        <a href="blog/advanced-swiftui-techniques" class="read-more">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 (Placeholder) -->
+                <div class="blog-card animate-on-scroll">
+                    <img src="img/blog-post-3.jpg" alt="CI/CD Pipelines" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-date">February 15, 2025</div>
+                        <h3 class="blog-title">Setting Up CI/CD for iOS Projects</h3>
+                        <p class="blog-excerpt">A comprehensive guide to setting up continuous integration and deployment pipelines for iOS projects using GitHub Actions.</p>
+                        <a href="blog/ios-cicd-setup" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="center" style="margin-top: 2rem; text-align: center;">
+                <a href="blog/" class="button button-secondary">View All Articles</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container animate-on-scroll">
+                <div class="contact-text">
+                    <p>I'm always open to discussing new projects, opportunities, or partnerships. Feel free to reach out through any of the platforms below.</p>
+                </div>
+                <div class="social-links">
+                    <a href="mailto:gentianbarileva@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gentique" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/gentique" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com/gentique" target="_blank" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                <a href="https://calendly.com/gentianbarileva" target="_blank" class="button">Schedule a Meeting</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#open-source">Open Source</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2025</span> Gentian Barileva. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="Helper/jquery.min.js"></script>
+    <script src="Helper/script.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
