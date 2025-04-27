@@ -1,0 +1,815 @@
+:root {
+  /* Color scheme - easily modifiable */
+  --primary-color: #0061ff; /* Apple-inspired blue */
+  --secondary-color: #34c759; /* Apple-inspired green */
+  --text-color: #333333;
+  --background-color: #ffffff;
+  --background-secondary: #f5f5f7; /* Apple-inspired light gray */
+  --border-color: #d2d2d7;
+  --accent-color: #ff9500; /* Apple-inspired orange */
+  --error-color: #ff3b30; /* Apple-inspired red */
+  --success-color: #34c759; /* Apple-inspired green */
+  
+  /* Dark mode colors */
+  --dark-background: #1d1d1f;
+  --dark-background-secondary: #2d2d2f;
+  --dark-text-color: #f5f5f7;
+  --dark-border-color: #424245;
+}
+
+/* Typography */
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/fonts/SF-Pro-Display-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/fonts/SF-Pro-Display-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('/fonts/SF-Pro-Text-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('/fonts/SF-Pro-Text-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header & Navigation */
+header {
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'SF Pro Display', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover, 
+nav a.active {
+  color: var(--primary-color);
+}
+
+/* Mobile navigation button */
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Hero Section */
+.hero {
+  padding: 6rem 0;
+  background-color: var(--background-secondary);
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button-secondary {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  margin-left: 1rem;
+}
+
+.button-secondary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Sections */
+.section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.section-title:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.subsection-title {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.subsection-title:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.project-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.project-description {
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  background-color: var(--background-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.5rem; /* Reduced gap as text is now static */
+  align-items: center; /* Align icon and text */
+  color: var(--primary-color); /* Style the remaining content like a link */
+  font-weight: 500; /* Style the remaining content like a link */
+}
+
+/* Experience Section */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(30px);
+  width: 2px;
+  background-color: var(--primary-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 60px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 22px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  transform: translateY(8px);
+}
+
+.timeline-content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.timeline-title {
+  margin: 0 0 0.5rem 0;
+  font-family: 'SF Pro Display', sans-serif;
+}
+
+.timeline-subtitle {
+  margin: 0 0 1rem 0;
+  color: #666;
+}
+
+/* Skills Section */
+.skills-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.skills-category {
+  margin-bottom: 2rem;
+}
+
+.skills-category h3 {
+  font-family: 'SF Pro Display', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.skill-item i {
+  color: var(--primary-color);
+}
+
+/* Open Source Section */
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.repo-card {
+  position: relative; /* Needed for absolute positioning of repo-card-link */
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.repo-card:hover {
+   transform: translateY(-5px);
+}
+
+/* Restore styles for elements that were removed or are now inside the link */
+.repo-card-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px; /* Match card radius */
+  z-index: 1; /* Place above content but below explicit links if needed */
+}
+
+.repo-meta .read-more {
+   color: var(--primary-color);
+   text-decoration: none;
+   font-weight: 500;
+   position: relative; /* Ensure it's clickable over repo-card-link */
+   z-index: 2;
+}
+
+.repo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.repo-title i {
+  color: var(--primary-color);
+}
+
+.repo-title h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.repo-description {
+  margin-bottom: 1.5rem;
+  color: #666;
+  position: relative;
+  z-index: 2;
+}
+
+.repo-meta {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.repo-language {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.language-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.lang-swift {
+  background-color: #F05138;
+}
+
+.lang-python {
+  background-color: #3572A5;
+}
+
+.lang-javascript {
+  background-color: #F7DF1E;
+}
+
+.lang-cpp {
+  background-color: #00599C;
+}
+
+/* Blog Section */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.blog-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 1.5rem;
+}
+
+.blog-date {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.blog-title {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.25rem;
+}
+
+.blog-excerpt {
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.read-more {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Contact Section */
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-text {
+  margin-bottom: 2rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: var(--primary-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+footer {
+  background-color: var(--background-secondary);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+  width: 100%;
+  max-width: 800px;
+  color: #666;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--dark-text-color);
+    background-color: var(--dark-background);
+  }
+
+  header {
+    background-color: var(--dark-background);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  nav a {
+    color: var(--dark-text-color);
+  }
+
+  .hero {
+    background-color: var(--dark-background-secondary);
+  }
+
+  .timeline-content,
+  .project-card,
+  .skill-item,
+  .repo-card,
+  .blog-card,
+  .social-link {
+    background-color: var(--dark-background-secondary);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .tech-tag {
+    background-color: var(--dark-background);
+  }
+
+  .project-description,
+  .timeline-subtitle,
+  .blog-date,
+  .blog-excerpt {
+    color: #bbb;
+  }
+
+  footer {
+    background-color: var(--dark-background-secondary);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--dark-border-color);
+    color: #bbb;
+  }
+  
+  .repo-card {
+    background-color: var(--dark-background-secondary);
+  }
+  
+  .repo-description {
+    color: #bbb;
+  }
+
+  /* Remove dark mode styles specific to card-link on repo-card */
+  /* Removed empty rule: .repo-card.card-link */
+
+  /* ... existing dark mode styles ... */
+
+  .project-links {
+     color: var(--primary-color); /* Keep link-like color */
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .hero-text p {
+    margin: 0 auto 2rem auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .menu-button {
+    display: block;
+  }
+  
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 0;
+    gap: 1rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  nav ul.active {
+    display: flex;
+  }
+  
+  .timeline::before {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    padding-left: 50px;
+  }
+  
+  .timeline-dot {
+    left: 12px;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    nav ul {
+      background-color: var(--dark-background);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 12px;
+  }
+  
+  .hero {
+    padding: 4rem 0;
+  }
+  
+  .hero-image img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* Style for the clickable card links */
+.card-link {
+  display: block; /* Make the anchor fill the grid item */
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color from parent */
+  border-radius: 12px; /* Match card border-radius */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-link:hover {
+  text-decoration: none; /* Ensure no underline on hover */
+  color: inherit;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove styles specific to card-link on repo-card */
+/* Removed empty rule: .repo-card.card-link */
+
+/* Removed empty rule: .repo-card.card-link:hover */
+
+.project-card:hover,
+.repo-card:hover,
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Adjusted shadow for consistency */
+}
+
+.read-more {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Ensure .project-links content remains styled like a link */
+.project-links {
+    color: var(--primary-color);
+    font-weight: 500;
+}
