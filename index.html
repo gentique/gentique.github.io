@@ -37,20 +37,20 @@
         gtag('config', 'G-YOUR-ANALYTICS-ID');
     </script>
 </head>
-<body>
+<body id="home">
     <!-- Header & Navigation -->
     <header>
         <div class="container header-content">
-            <a href="#" class="logo">GB</a>
+            <a href="#home" class="logo">GB</a>
             <nav>
                 <button class="menu-button" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <ul>
-                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#blog">Latest Articles</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -221,39 +221,18 @@
         <div class="container">
             <h2 class="section-title">Latest Articles</h2>
             <div class="blog-grid">
-                <!-- Blog Post 1 (Placeholder) -->
-                <div class="blog-card animate-on-scroll">
+                <!-- Blog Post 1 -->
+                <a href="https://povio.com/blog/mobile-app-delivery-with-ease" target="_blank" class="blog-card animate-on-scroll card-link">
                     <div class="blog-content">
-                        <div class="blog-date">April 10, 2025</div>
-                        <h3 class="blog-title">Effective iOS Testing Strategies</h3>
-                        <p class="blog-excerpt">Learn how to implement effective testing strategies for iOS applications using Snapshot Testing and proper test organization.</p>
-                        <a href="blog/ios-testing-strategies" class="read-more">Read More</a>
+                        <div class="blog-date">September 30, 2022</div>
+                        <h3 class="blog-title">Mobile App Delivery With Ease</h3>
+                        <p class="blog-excerpt">Learn how automating mobile app delivery using CI/CD and tools like fastlane can streamline development, avoid repetitive tasks, and ensure smoother releases.</p>
                     </div>
-                </div>
+                </a>
                 
-                <!-- Blog Post 2 (Placeholder) -->
-                <div class="blog-card animate-on-scroll">
-                    <div class="blog-content">
-                        <div class="blog-date">March 25, 2025</div>
-                        <h3 class="blog-title">Advanced SwiftUI Techniques</h3>
-                        <p class="blog-excerpt">Explore advanced SwiftUI techniques for creating custom animations, transitions, and complex UI components.</p>
-                        <a href="blog/advanced-swiftui-techniques" class="read-more">Read More</a>
-                    </div>
-                </div>
-                
-                <!-- Blog Post 3 (Placeholder) -->
-                <div class="blog-card animate-on-scroll">
-                    <div class="blog-content">
-                        <div class="blog-date">February 15, 2025</div>
-                        <h3 class="blog-title">Setting Up CI/CD for iOS Projects</h3>
-                        <p class="blog-excerpt">A comprehensive guide to setting up continuous integration and deployment pipelines for iOS projects using GitHub Actions.</p>
-                        <a href="blog/ios-cicd-setup" class="read-more">Read More</a>
-                    </div>
-                </div>
+                <!-- Removed other blog posts -->
             </div>
-            <div class="center" style="margin-top: 2rem; text-align: center;">
-                <a href="blog/" class="button button-secondary">View All Articles</a>
-            </div>
+            <!-- Removed "View All Articles" button -->
         </div>
     </section>
     
@@ -265,7 +244,7 @@
             <!-- Featured Projects -->
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card animate-on-scroll">
+                <a href="https://itunes.apple.com/us/app/progress-bar-track-your-time/id1451762114" target="_blank" class="project-card animate-on-scroll card-link" aria-label="View Progress Bar on App Store">
                     <div class="project-content">
                         <h3 class="project-title">Progress Bar - Track Your Time</h3>
                         <p class="project-description">A time tracker and organizer app for iOS that helps users visualize and manage their time effectively with intuitive progress bars.</p>
@@ -276,13 +255,14 @@
                             <span class="tech-tag">CloudKit</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://itunes.apple.com/us/app/progress-bar-track-your-time/id1451762114" target="_blank"><i class="fab fa-app-store-ios"></i> View on App Store</a>
+                            <!-- Link removed, card is clickable -->
+                            <i class="fab fa-app-store-ios"></i> App Store
                         </div>
                     </div>
-                </div>
+                </a>
                 
                 <!-- Project 2 -->
-                <div class="project-card animate-on-scroll">
+                <a href="https://github.com/gentique/jutubeDL" target="_blank" class="project-card animate-on-scroll card-link" aria-label="View Audio Player on GitHub">
                     <div class="project-content">
                         <h3 class="project-title">Audio Player with Download Functionality</h3>
                         <p class="project-description">A fully-fledged iOS audio player with built-in downloading capabilities for offline listening, custom playback controls, and playlist management.</p>
@@ -293,13 +273,14 @@
                             <span class="tech-tag">MediaPlayer</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/gentique/jutubeDL" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                             <!-- Link removed, card is clickable -->
+                             <i class="fab fa-github"></i> GitHub
                         </div>
                     </div>
-                </div>
+                </a>
                 
                 <!-- Project 3 -->
-                <div class="project-card animate-on-scroll">
+                <a href="https://apps.apple.com/app/airalo/id1475911720" target="_blank" class="project-card animate-on-scroll card-link" aria-label="View Airalo on App Store">
                     <div class="project-content">
                         <h3 class="project-title">Airalo iOS App</h3>
                         <p class="project-description">Contributed to the Airalo iOS app, focusing on optimizing testability, improving CI/CD workflows, and enhancing the overall software development lifecycle.</p>
@@ -311,14 +292,15 @@
                             <span class="tech-tag">Maestro</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://apps.apple.com/app/airalo/id1475911720" target="_blank"><i class="fab fa-app-store-ios"></i> View on App Store</a>
+                             <!-- Link removed, card is clickable -->
+                             <i class="fab fa-app-store-ios"></i> App Store
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             
             <!-- Open Source Contributions -->
-            <div class="repo-grid" style="margin-top: 3rem;">
+            <div id="open-source" class="repo-grid" style="margin-top: 3rem;">
                 <!-- jutubeDL Repository -->
                 <div class="repo-card animate-on-scroll">
                     <a href="https://github.com/gentique/jutubeDL" target="_blank" class="repo-card-link" aria-label="View jutubeDL repository"></a>
@@ -421,20 +403,19 @@
     <footer>
         <div class="container footer-content">
             <div class="footer-links">
+                <a href="#home">Home</a>
                 <a href="#experience">Experience</a>
                 <a href="#skills">Skills</a>
-                <a href="#blog">Blog</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year">2025</span> Gentian Barileva. All rights reserved.</p>
+                <p>&copy; <span id="current-year"></span> Gentian Barileva. All rights reserved.</p>
             </div>
         </div>
     </footer>
     
     <!-- Scripts -->
-    <script src="Helper/jquery.min.js"></script>
     <script src="Helper/script.js"></script>
     <script>
         // Set current year in footer

@@ -295,13 +295,10 @@ nav a.active {
 
 .project-links {
   display: flex;
-  gap: 1rem;
-}
-
-.project-links a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 500;
+  gap: 0.5rem; /* Reduced gap as text is now static */
+  align-items: center; /* Align icon and text */
+  color: var(--primary-color); /* Style the remaining content like a link */
+  font-weight: 500; /* Style the remaining content like a link */
 }
 
 /* Experience Section */
@@ -406,7 +403,7 @@ nav a.active {
 }
 
 .repo-card {
-  position: relative;
+  position: relative; /* Needed for absolute positioning of repo-card-link */
   background-color: white;
   border-radius: 10px;
   padding: 1.5rem;
@@ -416,17 +413,26 @@ nav a.active {
 }
 
 .repo-card:hover {
-  transform: translateY(-5px);
+   transform: translateY(-5px);
 }
 
+/* Restore styles for elements that were removed or are now inside the link */
 .repo-card-link {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
-  z-index: 1;
+  border-radius: 10px; /* Match card radius */
+  z-index: 1; /* Place above content but below explicit links if needed */
+}
+
+.repo-meta .read-more {
+   color: var(--primary-color);
+   text-decoration: none;
+   font-weight: 500;
+   position: relative; /* Ensure it's clickable over repo-card-link */
+   z-index: 2;
 }
 
 .repo-title {
@@ -670,6 +676,15 @@ footer {
   .repo-description {
     color: #bbb;
   }
+
+  /* Remove dark mode styles specific to card-link on repo-card */
+  /* Removed empty rule: .repo-card.card-link */
+
+  /* ... existing dark mode styles ... */
+
+  .project-links {
+     color: var(--primary-color); /* Keep link-like color */
+  }
 }
 
 /* Responsive */
@@ -757,4 +772,44 @@ footer {
   .section-title {
     font-size: 2.25rem;
   }
+}
+
+/* Style for the clickable card links */
+.card-link {
+  display: block; /* Make the anchor fill the grid item */
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color from parent */
+  border-radius: 12px; /* Match card border-radius */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-link:hover {
+  text-decoration: none; /* Ensure no underline on hover */
+  color: inherit;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove styles specific to card-link on repo-card */
+/* Removed empty rule: .repo-card.card-link */
+
+/* Removed empty rule: .repo-card.card-link:hover */
+
+.project-card:hover,
+.repo-card:hover,
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Adjusted shadow for consistency */
+}
+
+.read-more {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Ensure .project-links content remains styled like a link */
+.project-links {
+    color: var(--primary-color);
+    font-weight: 500;
 }
