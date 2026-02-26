@@ -670,6 +670,10 @@ footer {
     background-color: var(--dark-background-secondary);
   }
 
+  .footer-links a {
+    color: var(--dark-text-color);
+  }
+
   .footer-bottom {
     border-top: 1px solid var(--dark-border-color);
     color: #bbb;
