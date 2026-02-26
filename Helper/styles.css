@@ -115,6 +115,12 @@ nav a.active {
   color: var(--primary-color);
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
 /* Mobile navigation button */
 .menu-button {
   display: none;
@@ -812,4 +818,31 @@ footer {
 .project-links {
     color: var(--primary-color);
     font-weight: 500;
+}
+
+.js-enabled .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js-enabled .animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .js-enabled .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
 }

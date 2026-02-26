@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Gentian Barileva - Senior iOS Engineer with expertise in Swift, SwiftUI, and mobile development">
     <meta name="keywords" content="iOS Developer, Swift, SwiftUI, Mobile Development, Software Engineer, Gentian Barileva">
+    <link rel="canonical" href="https://gentique.dev/">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="Gentian Barileva - Senior iOS Engineer">
     <meta property="og:description" content="Professional portfolio of Gentian Barileva, a Senior iOS Engineer with expertise in Swift, SwiftUI, and mobile app development">
-    <meta property="og:image" content="img/Photo-149-slack.jpg">
+    <meta property="og:image" content="https://gentique.dev/img/Photo-149-slack.jpg">
     <meta property="og:url" content="https://gentique.dev">
+    <meta name="twitter:title" content="Gentian Barileva - Senior iOS Engineer">
+    <meta name="twitter:description" content="Portfolio of Gentian Barileva, Senior iOS Engineer specializing in Swift, SwiftUI, CI/CD, and quality-focused mobile development.">
+    <meta name="twitter:image" content="https://gentique.dev/img/Photo-149-slack.jpg">
     <meta name="twitter:card" content="summary_large_image">
     
     <title>Gentian Barileva - Senior iOS Engineer</title>
@@ -36,6 +41,20 @@
         gtag('js', new Date());
         gtag('config', 'G-YOUR-ANALYTICS-ID');
     </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Gentian Barileva",
+            "url": "https://gentique.dev/",
+            "jobTitle": "Senior iOS Engineer",
+            "sameAs": [
+                "https://github.com/gentique",
+                "https://www.linkedin.com/in/gentique",
+                "https://twitter.com/gentique"
+            ]
+        }
+    </script>
 </head>
 <body id="home">
     <!-- Header & Navigation -->
@@ -43,10 +62,10 @@
         <div class="container header-content">
             <a href="#home" class="logo">GB</a>
             <nav>
-                <button class="menu-button" aria-label="Toggle menu">
+                <button class="menu-button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
                     <i class="fas fa-bars"></i>
                 </button>
-                <ul>
+                <ul id="primary-navigation">
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -58,6 +77,7 @@
         </div>
     </header>
     
+    <main>
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -222,7 +242,7 @@
             <h2 class="section-title">Latest Articles</h2>
             <div class="blog-grid">
                 <!-- Blog Post 1 -->
-                <a href="https://povio.com/blog/mobile-app-delivery-with-ease" target="_blank" class="blog-card animate-on-scroll card-link">
+                <a href="https://povio.com/blog/mobile-app-delivery-with-ease" target="_blank" rel="noopener noreferrer" class="blog-card animate-on-scroll card-link">
                     <div class="blog-content">
                         <div class="blog-date">September 30, 2022</div>
                         <h3 class="blog-title">Mobile App Delivery With Ease</h3>
@@ -244,7 +264,7 @@
             <!-- Featured Projects -->
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <a href="https://itunes.apple.com/us/app/progress-bar-track-your-time/id1451762114" target="_blank" class="project-card animate-on-scroll card-link" aria-label="View Progress Bar on App Store">
+                <a href="https://itunes.apple.com/us/app/progress-bar-track-your-time/id1451762114" target="_blank" rel="noopener noreferrer" class="project-card animate-on-scroll card-link" aria-label="View Progress Bar on App Store">
                     <div class="project-content">
                         <h3 class="project-title">Progress Bar - Track Your Time</h3>
                         <p class="project-description">A time tracker and organizer app for iOS that helps users visualize and manage their time effectively with intuitive progress bars.</p>
@@ -262,7 +282,7 @@
                 </a>
                 
                 <!-- Project 2 -->
-                <a href="https://github.com/gentique/jutubeDL" target="_blank" class="project-card animate-on-scroll card-link" aria-label="View Audio Player on GitHub">
+                <a href="https://github.com/gentique/jutubeDL" target="_blank" rel="noopener noreferrer" class="project-card animate-on-scroll card-link" aria-label="View Audio Player on GitHub">
                     <div class="project-content">
                         <h3 class="project-title">Audio Player with Download Functionality</h3>
                         <p class="project-description">A fully-fledged iOS audio player with built-in downloading capabilities for offline listening, custom playback controls, and playlist management.</p>
@@ -280,7 +300,7 @@
                 </a>
                 
                 <!-- Project 3 -->
-                <a href="https://apps.apple.com/app/airalo/id1475911720" target="_blank" class="project-card animate-on-scroll card-link" aria-label="View Airalo on App Store">
+                <a href="https://apps.apple.com/app/airalo/id1475911720" target="_blank" rel="noopener noreferrer" class="project-card animate-on-scroll card-link" aria-label="View Airalo on App Store">
                     <div class="project-content">
                         <h3 class="project-title">Airalo iOS App</h3>
                         <p class="project-description">Contributed to the Airalo iOS app, focusing on optimizing testability, improving CI/CD workflows, and enhancing the overall software development lifecycle.</p>
@@ -303,7 +323,7 @@
             <div id="open-source" class="repo-grid" style="margin-top: 3rem;">
                 <!-- jutubeDL Repository -->
                 <div class="repo-card animate-on-scroll">
-                    <a href="https://github.com/gentique/jutubeDL" target="_blank" class="repo-card-link" aria-label="View jutubeDL repository"></a>
+                    <a href="https://github.com/gentique/jutubeDL" target="_blank" rel="noopener noreferrer" class="repo-card-link" aria-label="View jutubeDL repository"></a>
                     <div class="repo-title">
                         <i class="fab fa-github"></i>
                         <h3>jutubeDL</h3>
@@ -314,13 +334,13 @@
                             <span class="language-dot lang-swift"></span>
                             <span>Swift</span>
                         </div>
-                        <a href="https://github.com/gentique/jutubeDL" target="_blank" class="read-more">View Repository</a>
+                        <a href="https://github.com/gentique/jutubeDL" target="_blank" rel="noopener noreferrer" class="read-more">View Repository</a>
                     </div>
                 </div>
                 
                 <!-- GBLocationManager Repository -->
                 <div class="repo-card animate-on-scroll">
-                    <a href="https://github.com/gentique/GBLocationManager-Singleton" target="_blank" class="repo-card-link" aria-label="View GBLocationManager-Singleton repository"></a>
+                    <a href="https://github.com/gentique/GBLocationManager-Singleton" target="_blank" rel="noopener noreferrer" class="repo-card-link" aria-label="View GBLocationManager-Singleton repository"></a>
                     <div class="repo-title">
                         <i class="fab fa-github"></i>
                         <h3>GBLocationManager-Singleton</h3>
@@ -331,13 +351,13 @@
                             <span class="language-dot lang-swift"></span>
                             <span>Swift</span>
                         </div>
-                        <a href="https://github.com/gentique/GBLocationManager-Singleton" target="_blank" class="read-more">View Repository</a>
+                        <a href="https://github.com/gentique/GBLocationManager-Singleton" target="_blank" rel="noopener noreferrer" class="read-more">View Repository</a>
                     </div>
                 </div>
                 
                 <!-- VisionFaceAware Repository -->
                 <div class="repo-card animate-on-scroll">
-                    <a href="https://github.com/gentique/VisionFaceAware" target="_blank" class="repo-card-link" aria-label="View VisionFaceAware repository"></a>
+                    <a href="https://github.com/gentique/VisionFaceAware" target="_blank" rel="noopener noreferrer" class="repo-card-link" aria-label="View VisionFaceAware repository"></a>
                     <div class="repo-title">
                         <i class="fab fa-github"></i>
                         <h3>VisionFaceAware</h3>
@@ -348,13 +368,13 @@
                             <span class="language-dot lang-swift"></span>
                             <span>Swift</span>
                         </div>
-                        <a href="https://github.com/gentique/VisionFaceAware" target="_blank" class="read-more">View Repository</a>
+                        <a href="https://github.com/gentique/VisionFaceAware" target="_blank" rel="noopener noreferrer" class="read-more">View Repository</a>
                     </div>
                 </div>
                 
                 <!-- AppStoreScrapper Repository -->
                 <div class="repo-card animate-on-scroll">
-                    <a href="https://github.com/gentique/AppStoreScrapper" target="_blank" class="repo-card-link" aria-label="View AppStoreScrapper repository"></a>
+                    <a href="https://github.com/gentique/AppStoreScrapper" target="_blank" rel="noopener noreferrer" class="repo-card-link" aria-label="View AppStoreScrapper repository"></a>
                     <div class="repo-title">
                         <i class="fab fa-github"></i>
                         <h3>AppStoreScrapper</h3>
@@ -365,7 +385,7 @@
                             <span class="language-dot lang-python"></span>
                             <span>Python</span>
                         </div>
-                        <a href="https://github.com/gentique/AppStoreScrapper" target="_blank" class="read-more">View Repository</a>
+                        <a href="https://github.com/gentique/AppStoreScrapper" target="_blank" rel="noopener noreferrer" class="read-more">View Repository</a>
                     </div>
                 </div>
             </div>
@@ -384,20 +404,21 @@
                     <a href="mailto:gentianbarileva@gmail.com" class="social-link" aria-label="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/gentique" target="_blank" class="social-link" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/gentique" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com/gentique" target="_blank" class="social-link" aria-label="GitHub">
+                    <a href="https://github.com/gentique" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://twitter.com/gentique" target="_blank" class="social-link" aria-label="Twitter">
+                    <a href="https://twitter.com/gentique" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
                         <i class="fab fa-twitter"></i>
                     </a>
                 </div>
-                <a href="https://calendar.app.google/iDUT6VVHr3gQGFip6" target="_blank" class="button">Schedule a Meeting</a>
+                <a href="https://calendar.app.google/iDUT6VVHr3gQGFip6" target="_blank" rel="noopener noreferrer" class="button">Schedule a Meeting</a>
             </div>
         </div>
     </section>
+    </main>
     
     <!-- Footer -->
     <footer>
@@ -417,9 +438,5 @@
     
     <!-- Scripts -->
     <script src="Helper/script.js"></script>
-    <script>
-        // Set current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>
