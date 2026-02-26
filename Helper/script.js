@@ -1,17 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
+  document.body.classList.add('js-enabled');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // Mobile navigation toggle
   const menuButton = document.querySelector('.menu-button');
   const navMenu = document.querySelector('nav ul');
   
   if (menuButton && navMenu) {
+    const closeMenu = function() {
+      navMenu.classList.remove('active');
+      menuButton.setAttribute('aria-expanded', 'false');
+    };
+
     menuButton.addEventListener('click', function() {
-      navMenu.classList.toggle('active');
+      const isOpen = navMenu.classList.toggle('active');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
     });
 
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
       if (!event.target.closest('nav') && !event.target.matches('.menu-button')) {
-        navMenu.classList.remove('active');
+        closeMenu();
       }
     });
 
@@ -19,8 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = navMenu.querySelectorAll('a');
     navLinks.forEach(link => {
       link.addEventListener('click', function() {
-        navMenu.classList.remove('active');
+        closeMenu();
       });
+    });
+
+    // Close menu with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeMenu();
+      }
     });
   }
 
@@ -51,11 +67,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Special handling for home link when at the top
-    if (window.scrollY < sections[0].offsetTop - 200) { // If above the first section
+    if (homeLink && window.scrollY < sections[0].offsetTop - 200) { // If above the first section
         navLinks.forEach(link => link.classList.remove('active')); // Deactivate others
-        if (homeLink) {
-            homeLink.classList.add('active'); // Activate home
-        }
+        homeLink.classList.add('active'); // Activate home
     } else if (!current && homeLink) { // Fallback if no section is 'current' but not explicitly at top
         // This case might need refinement depending on exact scroll behavior desired
         // For now, ensure home is active if no other section is
@@ -78,11 +92,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Initial check
-  checkIfInView();
-  
-  // Check on scroll
-  window.addEventListener('scroll', checkIfInView);
+  if (prefersReducedMotion) {
+    animateElements.forEach(element => element.classList.add('animated'));
+  } else {
+    // Initial check
+    checkIfInView();
+    
+    // Check on scroll
+    window.addEventListener('scroll', checkIfInView);
+  }
   
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"], a[href^="../#"]').forEach(anchor => { // Include links starting with ../#
@@ -96,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (targetElement) {
             window.scrollTo({
               top: targetElement.offsetTop,
-              behavior: 'smooth'
+              behavior: prefersReducedMotion ? 'auto' : 'smooth'
             });
           }
       } else if (targetId.startsWith('../#')) {
