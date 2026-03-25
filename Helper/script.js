@@ -2,6 +2,100 @@ document.addEventListener('DOMContentLoaded', function() {
   document.body.classList.add('js-enabled');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  const monthNames = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec'
+  ];
+
+  function parseYearMonth(value) {
+    if (!value) {
+      return null;
+    }
+
+    const [yearString, monthString] = value.split('-');
+    const year = Number(yearString);
+    const month = Number(monthString);
+
+    if (!Number.isInteger(year) || !Number.isInteger(month) || month < 1 || month > 12) {
+      return null;
+    }
+
+    return { year, month };
+  }
+
+  function formatMonthYear(dateParts) {
+    return monthNames[dateParts.month - 1] + ' ' + dateParts.year;
+  }
+
+  function getInclusiveMonthSpan(start, end) {
+    return ((end.year - start.year) * 12) + (end.month - start.month) + 1;
+  }
+
+  function formatDuration(totalMonths) {
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+    const parts = [];
+
+    if (years > 0) {
+      parts.push(years + ' ' + (years === 1 ? 'yr' : 'yrs'));
+    }
+
+    if (months > 0 || years === 0) {
+      parts.push(months + ' ' + (months === 1 ? 'mo' : 'mos'));
+    }
+
+    return parts.join(' ');
+  }
+
+  function formatExperienceRange(start, end, isCurrent) {
+    return formatMonthYear(start) + ' - ' + (isCurrent ? 'Present' : formatMonthYear(end));
+  }
+
+  function updateExperienceDates() {
+    const experienceDates = document.querySelectorAll('[data-date-start]');
+    const now = new Date();
+    const currentMonth = {
+      year: now.getFullYear(),
+      month: now.getMonth() + 1
+    };
+
+    experienceDates.forEach(element => {
+      const start = parseYearMonth(element.dataset.dateStart);
+      const end = parseYearMonth(element.dataset.dateEnd) || currentMonth;
+
+      if (!start) {
+        return;
+      }
+
+      const isCurrent = !element.dataset.dateEnd;
+      const rangeText = formatExperienceRange(start, end, isCurrent);
+      const durationText = formatDuration(getInclusiveMonthSpan(start, end));
+      const format = element.dataset.dateFormat || 'range-with-duration';
+
+      if (format === 'duration-only') {
+        element.textContent = durationText;
+        return;
+      }
+
+      if (format === 'range-only') {
+        element.textContent = rangeText;
+        return;
+      }
+
+      element.textContent = rangeText + ' · ' + durationText;
+    });
+  }
+
   // Mobile navigation toggle
   const menuButton = document.querySelector('.menu-button');
   const navMenu = document.querySelector('nav ul');
@@ -151,4 +245,6 @@ document.addEventListener('DOMContentLoaded', function() {
   if (currentYearSpan) {
     currentYearSpan.textContent = new Date().getFullYear();
   }
+
+  updateExperienceDates();
 });

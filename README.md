@@ -1,6 +1,6 @@
 # gentique.github.io
 
-This repository contains the source code for the personal portfolio website of Gentian Barileva, a Senior iOS Engineer.
+This repository contains the source code for the personal portfolio website of Gentian Barileva, a Principal iOS Engineer.
 
 The website is built using HTML, CSS, and vanilla JavaScript. It showcases work experience, technical skills, projects, open-source contributions, and blog articles.
 
