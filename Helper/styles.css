@@ -87,6 +87,10 @@ header {
   align-items: center;
 }
 
+.header-content--nav-only {
+  justify-content: flex-end;
+}
+
 .logo {
   font-family: 'SF Pro Display', sans-serif;
   font-weight: bold;
